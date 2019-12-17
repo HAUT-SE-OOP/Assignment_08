@@ -14,10 +14,29 @@ bool isEqualTo(T a,T b)
 
 //Operator = = overload
 template <class U>
-bool operator==(const U &left,const  U &right)
+class Data
 {
-    return (left == right);
-}
+public:
+    explicit Data(U u)
+    {
+        datas=u;
+    }
+    U getDatas()const
+    {
+        return datas;
+    }
+    bool operator==(  U &right)
+    {
+        if(datas == right)
+        {
+            return true;
+        }
+        return false;
+    }
+private:
+    U datas;
+};
+
 int main()
 {
     int a=10,b = 15;
@@ -37,13 +56,14 @@ int main()
         cout << "c is equal to d" <<endl;
     else
         cout << "c is not equal to d" <<endl;
-
-    float e=12.3,f =5.6;
-    cout << "e: " << e << endl;
+    Data<float> e(12.3);
+    float f =5.6;
+    cout << "e: " << e.getDatas() << endl;
     cout << "f: " << f << endl;
-    if(e==f)
+    if(e.getDatas()==f)
         cout << "e is equal to f" <<endl;
     else
         cout << "e is not equal to f" <<endl;
     return 0;
 }//end main
+
