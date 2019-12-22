@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+#include<iomanip>
+using namespace std;
+class Complexes//定义Complexes类
+{
+public:
+    Complexes(double r=0,double i=0)//构造函数初始化
+    : real(r),imagine(i)
+    {
+
+    }
+    bool operator==(Complexes &a)//重置==
+    {
+        if(real==a.real&&imagine==a.imagine)
+            return true;
+        else
+            return false;
+    }
+    void display()//输出对象信息
+    {
+        cout<<"("<<real<<","<<imagine<<")"<<endl;
+    }
+private:
+    double real;
+    double imagine;
+};
+template<typename T>//模板头
+bool isEqualTo(T &a,T &b)//定义模板函数
+{
+    if(a==b)
+        {
+            cout<<"true"<<endl;
+            return true;
+        }
+    else
+        {
+            cout<<"false"<<endl;return false;
+        }
+}
+int main()//main函数
+{
+    /*声明4个Complexes对象，输出对象信息并调用isEqualTo及输出结果*/
+    Complexes a;
+    cout<<"a:";
+    a.display();
+    Complexes b;
+    cout<<"b:";
+    b.display();
+    isEqualTo(a,b);
+    Complexes c(2,4);
+    cout<<"c:";c.display();
+    Complexes d(3,4);
+    cout<<"d:";d.display();
+    isEqualTo(c,d);
+    return 0;
+}//end main
