@@ -6,7 +6,7 @@
 //  Copyright © 2019 misonomayubw. All rights reserved.
 //
 
-#include "Array.hpp"
+#include "Array.h"
 #include <iostream>
 
 using namespace std;
