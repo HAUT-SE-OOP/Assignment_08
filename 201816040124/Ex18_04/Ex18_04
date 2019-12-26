@@ -1,0 +1,34 @@
+#include <iostream>
+#include<string>
+#include"Array.h"
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+    /*分别声明两double类型的Array对象和一个int类型的Array对象*/
+    Array<double>array1(3);
+    Array<double>array2;
+    Array<int>array3(7);
+    /*输出size*/
+    cout<<"size of array1:"<<array1.getSize()<<endl;
+    cout<<"size of array2:"<<array2.getSize()<<endl;
+    cout<<"size of array3:"<<array3.getSize()<<endl;
+    cout<<fixed<<setprecision(2);//输出时保留两位小数
+    cout<<"array1:\n"<<array1<<"array2:\n"<<array2<<"array3:\n"<<array3;//输出三个对象
+    cout<<"输入array1"<<endl;
+    cin>>array1;
+    cout<<array1;
+    if(array1==array2)//判断array1和array2是否相等
+        cout<<"array1==array2"<<endl;
+    else
+        cout<<"array1!=array2"<<endl;
+    array2=array1;
+    cout<<"After copy"<<endl;
+    cout<<"array2:\n"<<array2;//判断令array2=array1后两者是否相等
+    if(array1==array2)
+        cout<<"array1==array2"<<endl;
+    else
+        cout<<"array1!=array2"<<endl;
+    return 0;
+}
