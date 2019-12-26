@@ -156,6 +156,14 @@ T Array<T>::operator[]( int subscript ) const
 // overloaded input operator for class Array;
 // inputs values for entire Array
 /*template<class T>
+istream &operator>>( istream &input, Array<T> &a )
+{
+   for ( size_t i = 0; i < a.size; ++i )
+      input >> a.ptr[ i ];
+
+   return input; // enables cin >> x >> y;
+} // end function*/
+
 // overloaded output operator for class Array
 /*template<class T>
 ostream &operator<<( ostream &output, const Array<T> &a )
@@ -177,4 +185,4 @@ ostream &operator<<( ostream &output, const Array<T> &a )
 
 
 #endif
-//参考了王嘉豪同学的
+
